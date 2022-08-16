@@ -10,8 +10,8 @@ import java.sql.SQLException;
  * @description 类的描述和介绍
  */
 public class DBUtil {
-    private static final String url = "jdbc:mysql://39.106.106.39:3306/GLS?characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
-    private static final String username = "admin";
+    private static final String url = "jdbc:mysql://localhost/project?characterEncoding=utf8&useSSL=false&serverTimezone=UTC";
+    private static final String username = "root";
     private static final String password = "123456";
     static {
         try {

@@ -20,11 +20,11 @@ pageEncoding="UTF-8" isELIgnored="false" %>
         <div class="col-md-12 column">
             <div class="page-header">
                 <h1>
-                    分类管理界面 <small>除了CRUD还有其他功能 但是 一会再说</small>
+                    分类管理界面
                 </h1>
             </div>
             <div class="page-information">
-                欢迎你,尊贵的用户${user.username}
+                欢迎你,尊贵的用户${user.name}
                 <a href="exitLogin">退出</a>
             </div>
             <table class="table table-bordered table-hover">
