@@ -26,7 +26,8 @@ public class PropertyListServlet extends HttpServlet {
         List<Property> properties=new PropertyDAO().list(cid);
         //数据存入请求
         req.setAttribute("properties",properties);
-        //通过转发
+        req.setAttribute("cid",cid);
+        //通过转发传递数据，并跳转页面
         req.getRequestDispatcher("page/property/listProperty.jsp").forward(req,resp);
     }
 }

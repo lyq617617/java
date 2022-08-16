@@ -3,7 +3,7 @@
          pageEncoding="UTF-8" isELIgnored="false" %>
 <html>
 <head>
-    <title>Title</title>
+
 </head>
 <body>
 <jsp:include page="../include/header.jsp" />
@@ -15,39 +15,20 @@
                     商品管理界面 <small>除了CRUD还有其他图片上传 属性管理</small>
                 </h1>
             </div>
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover" align="center">
                 <thead>
                 <tr>
-                    <th>
-                        商品图片
-                    </th>
-                    <th>
-                        商品名称
-                    </th>
-                    <th>
-                        商品小标题
-                    </th>
-                    <th>
-                        商品原价
-                    </th>
-                    <th>
-                        商品优惠价
-                    </th>
-                    <th>
-                        库存
-                    </th>
-                    <th>
-                        商品创建时间
-                    </th>
-                    <th>
-                        编辑
-                    </th>
-                    <th>
-                        删除
-                    </th>
-                    <th>
-                        图片管理
-                    </th>
+                    <th>商品图片</th>
+                    <th>商品名称</th>
+                    <th>商品小标题</th>
+                    <th>商品原价</th>
+                    <th>商品优惠价</th>
+                    <th>库存</th>
+                    <th>商品创建时间</th>
+                    <th>编辑</th>
+                    <th>删除</th>
+                    <th>图片管理</th>
+                    <th>属性值设置</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -71,6 +52,7 @@
                         <td><a href="editProduct?id=${product.id}"><button type="button" class="btn btn-default btn-primary">编辑</button></a> </td>
                         <td><a href="deleteProduct?id=${product.id}"><button type="button" class="btn btn-default btn-danger">删除</button></a> </td>
                         <td><a href="listImg?id=${product.id}"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a> </td>
+                        <td><a href="setPropertyValue?id=${product.id}"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a> </td>
                     </tr>
 
                 </c:forEach>
@@ -89,8 +71,6 @@
                     <input type="text" class="form-control" id="promotePrice" name="promotePrice" />
                     <label for="stock">商品库存:</label>
                     <input type="text" class="form-control" id="stock" name="stock" />
-                    <%--<label for="createDate">创建时间:</label>
-                    <input type="text" class="form-control" id="createDate" name="createDate" />--%>
 
                     <input  type="hidden" class="form-control" id="cid" name="cid" value="${cid}" />
                 </div>

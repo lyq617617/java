@@ -21,12 +21,16 @@ import java.io.IOException;
 public class PropertyAddServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //参数获取
         String name=req.getParameter("name");
         int cid=Integer.parseInt(req.getParameter("cid"));
+        //属性对象封装
         Property property=new Property();
         property.setCategory(new CategoryDAO().get(cid));
         property.setName(name);
+        //数据入库
         new PropertyDAO().add(property);
+        //页面跳转
         resp.sendRedirect("/listProperty?id="+cid);
     }
 }
