@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
-pageEncoding="UTF-8" isELIgnored="false" %>
+         pageEncoding="UTF-8" isELIgnored="false" %>
 <html>
 <head>
     <title>Title</title>
@@ -42,6 +42,9 @@ pageEncoding="UTF-8" isELIgnored="false" %>
                     <th>
                         删除
                     </th>
+                    <th>
+                    <td><a href="editCategory?id=${category.id}"><button type="button" class="btn btn-default btn-primary">编辑</button></a> </td>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -51,6 +54,7 @@ pageEncoding="UTF-8" isELIgnored="false" %>
                         <td><a  href="listProduct?id=${category.id}">${category.name}</a> </td>
                         <td><a href="editCategory?id=${category.id}"><button type="button" class="btn btn-default btn-primary">编辑</button></a> </td>
                         <td><button type="button" id="${category.id}"  class="btn delete btn-default btn-danger">删除</button></a> </td>
+                        <td><a href="listProperty?id=${category.id}"><button type="button" class="btn btn-default btn-primary">属性管理</button></a> </td>
                     </tr>
                 </c:forEach>
 
@@ -61,7 +65,7 @@ pageEncoding="UTF-8" isELIgnored="false" %>
                     <label for="name">分类名称:</label>
                     <input type="text" class="form-control" id="name" name="name" />
                 </div>
-              <button type="submit" class="btn btn-default">增加</button>
+                <button type="submit" class="btn btn-default">增加</button>
             </form>
         </div>
     </div>
@@ -69,18 +73,18 @@ pageEncoding="UTF-8" isELIgnored="false" %>
 <script>
     $(function () {
         $('.delete').click(function () {
-           let id = $(this).attr("id");
-           let page = "/deleteCategory";
-           let $that = $(this);
+            let id = $(this).attr("id");
+            let page = "/deleteCategory";
+            let $that = $(this);
             $.get(
                 page,//请求url
                 {"id":id},//请求携带参数
                 function (result) {//响应函数
-                   if(result=="success"){
-                       $that.parent().parent().hide();
-                   }else {
-                       alert("删除失败")
-                   }
+                    if(result=="success"){
+                        $that.parent().parent().hide();
+                    }else {
+                        alert("删除失败")
+                    }
                 }
             )
         });
